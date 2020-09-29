@@ -1,0 +1,237 @@
+name: polka_wallet
+description: PolkaWallet made with Flutter.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.4+1041
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  # intl - format numbers
+  intl: ^0.16.0
+  json_annotation: ^3.0.1
+  # state management with mobx & provider
+  mobx: ^1.2.0
+  flutter_mobx: ^1.1.0
+  mobx_codegen: ^1.1.0
+  provider: ^3.1.0
+  shared_preferences: ^0.5.6
+  get_storage: ^1.2.1
+  flutter_aes_ecb_pkcs5: ^0.1.1
+  convert: ^2.1.1
+  http: ^0.12.0
+  webview_flutter: ^0.3.22+1
+  flutter_webview_plugin: ^0.3.11
+  rxdart: ^0.24.0
+  flutter_local_notifications: ^1.4.2
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  update_app: ^0.1.5
+  device_info: ^0.4.2
+  biometric_storage: 1.0.1+5
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  # QR code generator & reader
+  qr_flutter:
+    git:
+      url: https://github.com/polkawallet-io/qr.flutter.git
+      ref: master
+  flutter_qr_scan:
+    git:
+      url: https://github.com/polkawallet-io/flutter_qr_reader.git
+      ref: master
+  permission_handler: ^4.2.0
+  # PackageInfo
+  package_info: ^0.4.0
+  # charts
+  charts_flutter: ^0.8.1
+  # svg renderer
+  flutter_svg: ^0.18.0
+  # open link in browser
+  url_launcher: ^5.4.2
+  # GraphQL
+  graphql_flutter: ^3.1.0
+  dropdown_search: ^0.4.4
+
+dev_dependencies:
+#  flutter_launcher_icons: ^0.7.5
+  build_runner: ^1.7.4
+  json_serializable: ^3.0.0
+  mockito: ^4.1.1
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/public/app.png"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    # js service
+    - lib/js_service_kusama/dist/main.js
+    - lib/js_service_acala/dist/main.js
+    - lib/js_service_laminar/dist/main.js
+    - lib/js_as_extension/dist/main.js
+
+    # images
+    ## images - settings
+    - assets/images/public/kusama.png
+    - assets/images/public/kusama_gray.png
+    - assets/images/public/acala-mandala.png
+    - assets/images/public/acala-mandala_gray.png
+    - assets/images/public/acala.png
+    - assets/images/public/acala_gray.png
+    - assets/images/public/laminar-turbulence.png
+    - assets/images/public/laminar-turbulence_gray.png
+    - assets/images/assets/ACA.png
+    - assets/images/assets/LAMI.png
+    - assets/images/assets/AUSD.png
+    - assets/images/assets/XBTC.png
+    - assets/images/assets/RENBTC.png
+    - assets/images/assets/LDOT.png
+    - assets/images/assets/KAR.png
+    - assets/images/assets/scanner.png
+    ## images - acala
+    - assets/images/assets/scanner_indigo.png
+    - assets/images/assets/top_bg_indigo.png
+    - assets/images/assets/receive_line_indigo.png
+    - assets/images/assets/qrcode_indigo.png
+    - assets/images/assets/plus_indigo.png
+    - assets/images/staking/top_bg_indigo.png
+    - assets/images/public/Assets_indigo.png
+    - assets/images/public/Governance_indigo.png
+    - assets/images/public/Profile_indigo.png
+    - assets/images/public/Staking_indigo.png
+    - assets/images/public/Acala_indigo.png
+    - assets/images/public/Acala_dark.png
+    - assets/images/acala/exchange.svg
+    - assets/images/acala/swap.svg
+    - assets/images/acala/deposit.svg
+    - assets/images/acala/loan.svg
+    - assets/images/acala/loan-start.svg
+    ## images - laminar
+    - assets/images/assets/scanner_purple.png
+    - assets/images/assets/top_bg_purple.png
+    - assets/images/assets/receive_line_purple.png
+    - assets/images/assets/qrcode_purple.png
+    - assets/images/assets/plus_purple.png
+    - assets/images/staking/top_bg_purple.png
+    - assets/images/public/Assets_purple.png
+    - assets/images/public/Governance_purple.png
+    - assets/images/public/Profile_purple.png
+    - assets/images/public/Staking_purple.png
+    - assets/images/public/Acala_purple.png
+    ## images - kusama
+    - assets/images/assets/scanner_black.png
+    - assets/images/public/Assets_black.png
+    - assets/images/public/Governance_black.png
+    - assets/images/public/Profile_black.png
+    - assets/images/public/Staking_black.png
+    - assets/images/assets/top_bg_black.png
+    - assets/images/assets/qrcode_black.png
+    - assets/images/assets/plus_black.png
+    - assets/images/assets/receive_line_black.png
+    - assets/images/staking/top_bg_black.png
+    ## images - polkadot
+    - assets/images/assets/scanner_pink.png
+    - assets/images/public/app.png
+    - assets/images/public/Assets_pink.png
+    - assets/images/public/Governance_pink.png
+    - assets/images/public/Profile_pink.png
+    - assets/images/public/Staking_pink.png
+    - assets/images/public/Assets_dark.png
+    - assets/images/public/Governance_dark.png
+    - assets/images/public/Profile_dark.png
+    - assets/images/public/Staking_dark.png
+    - assets/images/public/logo_about.png
+    - assets/images/public/dontscreen.png
+    - assets/images/public/copy.png
+    - assets/images/public/polkadot.png
+    - assets/images/public/polkadot_gray.png
+    - assets/images/public/westend.png
+    - assets/images/public/kusama.png
+    - assets/images/public/substrate.png
+    - assets/images/public/default.png
+    - assets/images/assets/logo.png
+    - assets/images/assets/top_bg_pink.png
+    - assets/images/assets/Assets_nav_0.png
+    - assets/images/assets/Assets_nav_1.png
+    - assets/images/assets/qrcode_pink.png
+    - assets/images/assets/plus_pink.png
+    - assets/images/assets/Menu_scan.png
+    - assets/images/assets/Menu_wallet.png
+    - assets/images/assets/assets_send.png
+    - assets/images/assets/assets_receive.png
+    - assets/images/assets/assets_up.png
+    - assets/images/assets/assets_down.png
+    - assets/images/assets/assets_fail.png
+    - assets/images/assets/success.png
+    - assets/images/assets/receive_line_pink.png
+    - assets/images/assets/DOT.png
+    - assets/images/assets/KSM.png
+    - assets/images/assets/FIR.png
+    - assets/images/staking/top_bg_pink.png
+    - assets/images/staking/set.png
+    - assets/images/staking/ok.png
+    - assets/images/staking/error.png
+    - assets/images/staking/stake.png
+    - assets/images/staking/nominate.png
+    - assets/images/staking/reward.svg
+    - assets/images/staking/slash.svg
+    - assets/images/gov/time.png
+    - assets/images/gov/polkassembly.png
+    - assets/images/profile/about.png
+    - assets/images/profile/address.png
+    - assets/images/profile/setting.png
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
